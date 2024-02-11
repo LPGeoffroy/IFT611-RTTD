@@ -1,9 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707667434
+::res://::1707675351
 icon.svg::CompressedTexture2D::5631703967143677067::1707590508::1707590530::1::::<><>::
+main.tscn::PackedScene::78741939323167630::1707675953::0::1::::<><>::uid://dadlnip38s7jy::::res://Tiles/tile_map.tscn<>uid://ce44rumisr87l::::res://Mobs/soldier_a.tscn
 README.md::TextFile::-1::1707590788::0::1::::<><>::
-main.tscn::PackedScene::78741939323167630::1707666826::0::1::::<><>::
-tile_map.tscn::PackedScene::7166146731258580394::1707667408::0::1::::<><>::uid://pawyuplpadm0::::res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png
 ::res://kenney_tower-defense-top-down/::1707666190
 License.txt::TextFile::-1::1469806176::0::1::::<><>::
 Preview.png::CompressedTexture2D::4453261599084896164::1469806728::1707590685::1::::<><>::
@@ -615,4 +614,7 @@ towerDefense_tilesheet.png::CompressedTexture2D::1054212361623973197::1469805780
 towerDefense_tilesheet@2.png::CompressedTexture2D::4788433712639389718::1469807614::1707590686::1::::<><>::
 ::res://kenney_tower-defense-top-down/Vector/::1707666190
 towerDefense_vector.svg::CompressedTexture2D::4604974504886193916::1469806244::1707590685::1::::<><>::
-::res://Tiles/::1707667434
+::res://Mobs/::1707675896
+soldier_a.tscn::PackedScene::5115255917485576567::1707675896::0::1::::<><>::uid://cub7psvx1tiil::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile245.png
+::res://Tiles/::1707675352
+tile_map.tscn::PackedScene::7166146731258580394::1707675352::0::1::::<><>::uid://pawyuplpadm0::::res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png

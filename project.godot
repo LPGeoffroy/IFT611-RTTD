@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=2304
 window/size/viewport_height=1296
-window/size/window_width_override=576
-window/size/window_height_override=324
+window/size/mode=3
 window/stretch/aspect="expand"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
