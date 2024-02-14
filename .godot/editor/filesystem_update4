@@ -1,8 +1,0 @@
-res://main.tscn
-res://tile_map.tscn
-res://Tiles/tile_map.tscn
-res://Mobs/Soldier A.tscn
-res://Mobs/TowerDefenseTile245.gd
-res://Mobs/Soldier A.gd
-res://Mobs/Stage 1.tscn
-res://PathSpawner.gd
