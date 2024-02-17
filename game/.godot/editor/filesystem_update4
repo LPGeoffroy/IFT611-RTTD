@@ -1,9 +1,5 @@
 res://main.tscn
-res://Tiles/tile_map.tscn
-res://Mobs/Soldier A.tscn
-res://Mobs/Stage 1.tscn
+res://ui.tscn
+res://Towers/RedTowerPanel.tscn
+res://Towers/RedTowerPanel.gd
 res://Towers/RedBulletTower.tscn
-res://Towers/RedBullet.tscn
-res://Towers/RedBullet.gd
-res://Towers/RedBulletTower.gd
-res://Mobs/Soldier A.gd

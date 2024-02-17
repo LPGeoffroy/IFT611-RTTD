@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhioktw4xks6y"]
+[gd_scene load_steps=6 format=3 uid="uid://bhioktw4xks6y"]
 
 [ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_fibup"]
 [ext_resource type="Texture2D" uid="uid://dprucpwru4i7o" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="1_i611d"]
@@ -7,7 +7,14 @@
 size = Vector2(51, 42)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l3rnr"]
-radius = 480.0
+radius = 400.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtjxk"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
 
 [node name="RedBulletTower" type="StaticBody2D"]
 script = ExtResource("1_fibup")
@@ -28,6 +35,14 @@ texture = ExtResource("1_i611d")
 shape = SubResource("CircleShape2D_l3rnr")
 
 [node name="BulletContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.313726)
+offset_left = -400.0
+offset_top = -400.0
+offset_right = 400.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rtjxk")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
