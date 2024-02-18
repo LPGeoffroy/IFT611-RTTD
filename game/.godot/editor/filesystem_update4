@@ -5,3 +5,6 @@ res://Towers/RedTowerPanel.tscn
 res://Towers/RedBulletTower.gd
 res://Towers/RedTowerPanel.gd
 res://Mobs/Stage 1.tscn
+res://Mobs/Soldier A.tscn
+res://Mobs/Soldier A.gd
+res://MainMenu.tscn

@@ -1,9 +1,9 @@
+HBoxContainer
+Button
+Label
+Panel
 Timer
 ProgressBar
-Label
-Button
-HBoxContainer
-Panel
 Node
 Sprite2D
 FlowContainer
@@ -12,4 +12,3 @@ Node2D
 Area2D
 CollisionShape2D
 CharacterBody2D
-Marker2D
