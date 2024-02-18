@@ -1,5 +1,7 @@
 res://main.tscn
 res://ui.tscn
-res://Towers/RedTowerPanel.tscn
-res://Towers/RedTowerPanel.gd
 res://Towers/RedBulletTower.tscn
+res://Towers/RedTowerPanel.tscn
+res://Towers/RedBulletTower.gd
+res://Towers/RedTowerPanel.gd
+res://Mobs/Stage 1.tscn

@@ -17,12 +17,13 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=3584
-window/size/viewport_height=2048
-window/size/window_width_override=1194
-window/size/window_height_override=682
+window/size/viewport_width=2944
+window/size/viewport_height=1280
+window/size/window_width_override=980
+window/size/window_height_override=427
 window/stretch/mode="viewport"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
