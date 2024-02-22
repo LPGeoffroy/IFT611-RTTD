@@ -6,12 +6,10 @@
 using namespace godot;
 
 void GDExample::_bind_methods() {
-  // Bindings amplitude
   ClassDB::bind_method(D_METHOD("get_amplitude"), &GDExample::get_amplitude);
   ClassDB::bind_method(D_METHOD("set_amplitude", "p_amplitude"), &GDExample::set_amplitude);
   ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
 
-  // Bindings speed
   ClassDB::bind_method(D_METHOD("get_speed"), &GDExample::get_speed);
   ClassDB::bind_method(D_METHOD("set_speed", "p_speed"), &GDExample::set_speed);
 	ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
@@ -30,7 +28,16 @@ GDExample::~GDExample() {
 	// Add your cleanup here.
 }
 
-void GDExample::_process(double delta) {
+// _physics_process est appelé précisément 60 fois par secondes (par défaut)
+void GDExample::_physics_process(double delta) {
+
+}
+
+// This function is not synced with physics. Its frame rate is not constant and is 
+// dependent on hardware and game optimization. Its execution is done after the physics 
+// step on single-threaded games.
+// delta : temps passé en secondes depuis le dernier _process
+void GDExample::_process(double delta) { 
   if(!Engine::get_singleton()->is_editor_hint()) {
     time_passed += speed * delta;
 

@@ -22,6 +22,7 @@ public:
 	~GDExample();
 
 	void _process(double delta) override;
+  void _physics_process(double delta) override;
 
   void set_amplitude(const double p_amplitude);
   double get_amplitude() const;
