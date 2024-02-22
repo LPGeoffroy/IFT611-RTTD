@@ -19,6 +19,7 @@ func _process(delta):
 	if is_instance_valid(curr):
 		self.look_at(curr.global_position)
 		if timer.is_stopped():
+			Shoot()
 			timer.start()
 	else:
 		for i in get_node("BulletContainer").get_child_count():
@@ -71,17 +72,21 @@ func _on_timer_timeout():
 	
 
 func _on_range_pressed():
-	range += 30
-
-
+	if Game.Gold >= 10:
+		Game.Gold -= 10
+		range += 30
+	
 func _on_attack_speed_pressed():
 	if reload <= 2:
-		reload += 0.1
+		if Game.Gold >= 10:
+			Game.Gold -= 10
+			reload += 0.1
 	timer.wait_time = 3 - reload
-
-
+	
 func _on_power_pressed():
-	bulletDamage += 1
+	if Game.Gold >= 10:
+		Game.Gold -= 10
+		bulletDamage += 1
 
 func update_powers():
 	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)

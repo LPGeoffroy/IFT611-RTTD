@@ -1,3 +1,4 @@
+Label
 Path2D
 PathFollow2D
 Timer
@@ -5,7 +6,6 @@ Node2D
 TileMap
 HBoxContainer
 Button
-Label
 Panel
 ProgressBar
 Node

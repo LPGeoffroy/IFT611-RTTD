@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhioktw4xks6y"]
+[gd_scene load_steps=19 format=3 uid="uid://bhioktw4xks6y"]
 
 [ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_fibup"]
 [ext_resource type="Texture2D" uid="uid://dprucpwru4i7o" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="1_i611d"]
@@ -26,6 +26,9 @@ func _draw():
 	var col = Color(0, 255, 0, 0.3)
 	draw_circle(cen, rad, col)
 "
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8vgu"]
+size = Vector2(128, 96)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtjxk"]
 bg_color = Color(1, 0, 0, 1)
@@ -120,6 +123,15 @@ texture = ExtResource("1_i611d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
 shape = SubResource("CircleShape2D_l3rnr")
 script = SubResource("GDScript_k3epx")
+
+[node name="TowerDetector" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerDetector"]
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_r8vgu")
 
 [node name="BulletContainer" type="Node" parent="."]
 
