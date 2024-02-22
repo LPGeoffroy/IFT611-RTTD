@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu584nws4qg5b"]
 
 [ext_resource type="PackedScene" uid="uid://dadlnip38s7jy" path="res://Tiles/tile_map.tscn" id="1_d1w4h"]
-[ext_resource type="Script" path="res://PathSpawner.gd" id="2_hlo7j"]
-[ext_resource type="Script" path="res://MainPathSpawner.gd" id="3_suntd"]
+[ext_resource type="Script" path="res://MainPathSpawnerMap2.gd" id="3_awt8h"]
 [ext_resource type="PackedScene" uid="uid://cybkisoimdyss" path="res://ui.tscn" id="4_4uvjc"]
+[ext_resource type="Script" path="res://ShortcutPathSpawnerMap2.gd" id="4_egmkg"]
 
 [node name="Map2" type="Node2D"]
 
@@ -14,18 +14,18 @@ layer_0/tile_data = PackedInt32Array(65537, 65536, 3, 65538, 65536, 3, 131075, 6
 
 [node name="UI" parent="." instance=ExtResource("4_4uvjc")]
 
-[node name="MainPathSpawner" type="Node2D" parent="."]
-script = ExtResource("3_suntd")
+[node name="PathSpawner" type="Node2D" parent="."]
+script = ExtResource("3_awt8h")
 
-[node name="Timer" type="Timer" parent="MainPathSpawner"]
+[node name="Timer" type="Timer" parent="PathSpawner"]
 autostart = true
 
 [node name="ShortcutPathSpawner" type="Node2D" parent="."]
-script = ExtResource("2_hlo7j")
+script = ExtResource("4_egmkg")
 
 [node name="Timer" type="Timer" parent="ShortcutPathSpawner"]
 wait_time = 5.0
 autostart = true
 
-[connection signal="timeout" from="MainPathSpawner/Timer" to="MainPathSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="ShortcutPathSpawner/Timer" to="ShortcutPathSpawner" method="_on_timer_timeout"]

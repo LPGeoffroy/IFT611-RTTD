@@ -1,15 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708620765
+::res://::1708629533
 icon.svg::CompressedTexture2D::5631703967143677067::1708009247::1708009247::1::::<><>::
-MainMenu.tscn::PackedScene::4556169508052242086::1708619206::0::1::::<><>::uid://dadlnip38s7jy::::res://Tiles/tile_map.tscn
-Map1.tscn::PackedScene::78741939323167630::1708620765::0::1::::<><>::uid://dadlnip38s7jy::::res://Tiles/tile_map.tscn<>res://PathSpawner.gd<>uid://cmiblu20wwn4n::::res://icon.svg<>uid://cybkisoimdyss::::res://ui.tscn
-Map2.tscn::PackedScene::6240605739199655589::1708620765::0::1::::<><>::uid://dadlnip38s7jy::::res://Tiles/tile_map.tscn<>res://PathSpawner.gd<>uid://cybkisoimdyss::::res://ui.tscn
+MainMenu.tscn::PackedScene::4556169508052242086::1708629340::0::1::::<><>::res://PlayMap2.gd
+Map1.tscn::PackedScene::78741939323167630::1708629569::0::1::::<><>::uid://dadlnip38s7jy::::res://Tiles/tile_map.tscn<>res://PathSpawner.gd<>uid://cmiblu20wwn4n::::res://icon.svg<>uid://cybkisoimdyss::::res://ui.tscn
+Map2.tscn::PackedScene::6240605739199655589::1708629518::0::1::::<><>::uid://dadlnip38s7jy::::res://Tiles/tile_map.tscn<>res://MainPathSpawnerMap2.gd<>uid://cybkisoimdyss::::res://ui.tscn<>res://ShortcutPathSpawnerMap2.gd
 PathSpawner.gd::GDScript::-1::1708620567::0::1::::<>Node2D<>::
-ui.tscn::PackedScene::6460060416159173038::1708620765::0::1::::<><>::uid://lv1vxyokysaq::::res://Towers/RedTowerPanel.tscn
+Health.gd::GDScript::-1::1708626816::0::1::::<>Label<>::
+Gold.gd::GDScript::-1::1708623022::0::1::::<>Label<>::
+PlayMap2.gd::GDScript::-1::1708629247::0::1::::<>Button<>::
+MainPathSpawnerMap2.gd::GDScript::-1::1708629518::0::1::::<>Node2D<>::
+ShortcutPathSpawnerMap2.gd::GDScript::-1::1708629495::0::1::::<>Node2D<>::
+ui.tscn::PackedScene::6460060416159173038::1708629340::0::1::::<><>::uid://lv1vxyokysaq::::res://Towers/RedTowerPanel.tscn<>res://Health.gd<>res://Gold.gd
 ::res://bin/::1708615076
 gdexample.gdextension::GDExtension::-1::1708009247::0::1::::<><>::
-::res://kenney_tower-defense-top-down/::1708618524
-License.txt::TextFile::-1::1708618524::0::1::::<><>::
+::res://Global/::1708628780
+Game.gd::GDScript::-1::1708628780::0::1::::<>Node<>::
+::res://kenney_tower-defense-top-down/::1708628823
+License.txt::TextFile::-1::1708628823::0::1::::<><>::
 Preview.png::CompressedTexture2D::4453261599084896164::1708009259::1708009259::1::::<><>::
 Preview_KenneyNL.png::CompressedTexture2D::6609802615689961269::1708009259::1708009259::1::::<><>::
 Sample.png::CompressedTexture2D::1525757293221812981::1708009259::1708009259::1::::<><>::
@@ -619,18 +626,18 @@ towerDefense_tilesheet.png::CompressedTexture2D::1054212361623973197::1708009259
 towerDefense_tilesheet@2.png::CompressedTexture2D::4788433712639389718::1708009259::1708009259::1::::<><>::
 ::res://kenney_tower-defense-top-down/Vector/::1708009259
 towerDefense_vector.svg::CompressedTexture2D::4604974504886193916::1708009259::1708009259::1::::<><>::
-::res://Mobs/::1708620766
-Stage 2 Shortcut 1.tscn::PackedScene::2191821622787984402::1708620766::0::1::::<><>::uid://ce44rumisr87l::::res://Mobs/Soldier A.tscn
-Soldier A.gd::GDScript::-1::1708619008::0::1::::<>CharacterBody2D<>::
-Soldier A.tscn::PackedScene::5115255917485576567::1708620765::0::1::::<><>::res://Mobs/Soldier A.gd<>uid://cub7psvx1tiil::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile245.png
-Stage 1.tscn::PackedScene::4489561296431074612::1708620766::0::1::::<><>::uid://ce44rumisr87l::::res://Mobs/Soldier A.tscn
-Stage 2.tscn::PackedScene::4234449762584406253::1708620766::0::1::::<><>::uid://ce44rumisr87l::::res://Mobs/Soldier A.tscn
-::res://Tiles/::1708620766
-tile_map.tscn::PackedScene::7166146731258580394::1708620766::0::1::::<><>::uid://pawyuplpadm0::::res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png
-::res://Towers/::1708620697
-RedBullet.gd::GDScript::-1::1708620697::0::1::::<>CharacterBody2D<>::
+::res://Mobs/::1708629340
+Soldier A.gd::GDScript::-1::1708628976::0::1::::<>CharacterBody2D<>::
+Soldier A.tscn::PackedScene::5115255917485576567::1708629340::0::1::::<><>::res://Mobs/Soldier A.gd<>uid://cub7psvx1tiil::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile245.png
+Stage 1.tscn::PackedScene::4489561296431074612::1708629340::0::1::::<><>::uid://ce44rumisr87l::::res://Mobs/Soldier A.tscn
+Stage 2 Shortcut 1.tscn::PackedScene::2191821622787984402::1708629340::0::1::::<><>::uid://ce44rumisr87l::::res://Mobs/Soldier A.tscn
+Stage 2.tscn::PackedScene::4234449762584406253::1708629340::0::1::::<><>::uid://ce44rumisr87l::::res://Mobs/Soldier A.tscn
+::res://Tiles/::1708628931
+tile_map.tscn::PackedScene::7166146731258580394::1708628931::0::1::::<><>::uid://pawyuplpadm0::::res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png
+::res://Towers/::1708629340
+RedBullet.gd::GDScript::-1::1708628882::0::1::::<>CharacterBody2D<>::
 RedBullet.tscn::PackedScene::2062411648942621114::1708026833::0::1::::<><>::uid://cccuih8d2nvix::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile251.png<>res://Towers/RedBullet.gd
-RedBulletTower.gd::GDScript::-1::1708619723::0::1::::<>StaticBody2D<>::
-RedBulletTower.tscn::PackedScene::2895126540307713246::1708619205::0::1::::<><>::res://Towers/RedBulletTower.gd<>uid://dprucpwru4i7o::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png<>uid://catn4xpafj83h::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile110.png<>uid://bwpad8ccljjoy::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile297.png<>uid://cadxx756wyrdb::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile296.png
-RedTowerPanel.gd::GDScript::-1::1708619684::0::1::::<>Panel<>::
-RedTowerPanel.tscn::PackedScene::817046602100325112::1708619205::0::1::::<><>::res://Towers/RedTowerPanel.gd<>uid://dprucpwru4i7o::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png
+RedBulletTower.gd::GDScript::-1::1708628901::0::1::::<>StaticBody2D<>::
+RedBulletTower.tscn::PackedScene::2895126540307713246::1708629340::0::1::::<><>::res://Towers/RedBulletTower.gd<>uid://dprucpwru4i7o::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png<>uid://catn4xpafj83h::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile110.png<>uid://bwpad8ccljjoy::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile297.png<>uid://cadxx756wyrdb::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile296.png
+RedTowerPanel.gd::GDScript::-1::1708628929::0::1::::<>Panel<>::
+RedTowerPanel.tscn::PackedScene::817046602100325112::1708629340::0::1::::<><>::res://Towers/RedTowerPanel.gd<>uid://dprucpwru4i7o::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png<>uid://dac8u51fywbha::::res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile275.png

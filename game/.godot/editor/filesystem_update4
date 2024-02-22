@@ -20,3 +20,7 @@ res://Global/Game.gd
 res://Health.gd
 res://Gold.gd
 res://MainPathSpawner.gd
+res://PlayMap2.gd
+res://ShortcutPathSpawnerMap2.gd
+res://MainPathSpawnerMap2.gd
+res://PathSpawnerMap1.gd
