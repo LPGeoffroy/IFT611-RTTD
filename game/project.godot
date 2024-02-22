@@ -11,17 +11,23 @@ config_version=5
 [application]
 
 config/name="TwrDef-TempsReel"
-run/main_scene="res://main.tscn"
+run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*res://Global/Game.gd"
+
 [display]
 
-window/size/viewport_width=2304
-window/size/viewport_height=1296
-window/size/mode=3
-window/stretch/aspect="expand"
+window/size/viewport_width=3584
+window/size/viewport_height=2048
+window/size/window_width_override=1194
+window/size/window_height_override=682
+window/stretch/mode="viewport"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
