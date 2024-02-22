@@ -6,7 +6,7 @@ var pathName = ""
 var bulletDamage
 
 func _physics_process(delta):
-	var pathSpawnerNode = get_tree().get_root().get_node("Main/PathSpawner")
+	var pathSpawnerNode = get_tree().get_root().get_node("Map2/MainPathSpawner")
 	
 	for i in pathSpawnerNode.get_child_count():
 		if pathSpawnerNode.get_child(i).name == pathName:

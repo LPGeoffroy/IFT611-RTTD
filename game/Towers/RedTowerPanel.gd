@@ -21,7 +21,7 @@ func _on_gui_input(event):
 			
 			get_child(1).global_position = event.global_position
 		
-			var mapPath = get_tree().get_root().get_node("Main/TileMap")
+			var mapPath = get_tree().get_root().get_node("Map2/TileMap")
 			var tile = mapPath.local_to_map(get_global_mouse_position())
 			currTile = mapPath.get_cell_atlas_coords(0, tile, false)
 			
@@ -38,7 +38,7 @@ func _on_gui_input(event):
 			if get_child_count() > 1:	
 				get_child(1).queue_free()
 			if currTile == Vector2i(4,5):
-				var path = get_tree().get_root().get_node("Main/Towers")
+				var path = get_tree().get_root().get_node("Map2/Towers")
 				
 				path.add_child(tempTower)
 				tempTower.global_position = event.global_position

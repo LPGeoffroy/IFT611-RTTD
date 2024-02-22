@@ -58,7 +58,7 @@ func _on_tower_body_exited(body):
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_mask == 1:
-		var towerPath = get_tree().get_root().get_node("Main/Towers")
+		var towerPath = get_tree().get_root().get_node("Map2/Towers")
 		for i in towerPath.get_child_count():
 			if towerPath.get_child(i).name != self.name:
 				towerPath.get_child(1).get_node("Upgrade/Upgrade").hide()
