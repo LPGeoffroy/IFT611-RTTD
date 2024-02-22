@@ -19,3 +19,4 @@ res://Mobs/Stage 2 Shortcut 1.tscn
 res://Global/Game.gd
 res://Health.gd
 res://Gold.gd
+res://MainPathSpawner.gd
