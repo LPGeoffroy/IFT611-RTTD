@@ -5,7 +5,7 @@ var Speed = 1000
 var pathName = ""
 var bulletDamage
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	var pathSpawnerNode = get_tree().get_root().get_node(str(Game.CurrentMap) + "/PathSpawner")
 	for i in pathSpawnerNode.get_child_count():

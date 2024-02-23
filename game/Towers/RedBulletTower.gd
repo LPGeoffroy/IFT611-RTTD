@@ -14,7 +14,7 @@ var range = 400
 var startShooting = false
 
 
-func _process(delta):
+func _process(_delta):
 	get_node("Upgrade/ProgressBar").global_position = self.position + Vector2(-64, -48)
 	if is_instance_valid(curr):
 		self.look_at(curr.global_position)
@@ -53,11 +53,11 @@ func _on_tower_body_entered(body):
 		curr = currTarget		
 		pathName = currTarget.get_parent().name
 		
-func _on_tower_body_exited(body):
+func _on_tower_body_exited(_body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
 
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_mask == 1:
 		var towerPath = get_tree().get_root().get_node(str(Game.CurrentMap) + "/Towers")
 		for i in towerPath.get_child_count():
