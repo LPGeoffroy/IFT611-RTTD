@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cybkisoimdyss"]
+[gd_scene load_steps=3 format=3 uid="uid://cybkisoimdyss"]
 
+[ext_resource type="Script" path="res://UI.gd" id="1_yjney"]
 [ext_resource type="PackedScene" uid="uid://lv1vxyokysaq" path="res://Towers/RedTowerPanel.tscn" id="1_yuwu3"]
-[ext_resource type="Script" path="res://Health.gd" id="2_spcvb"]
-[ext_resource type="Script" path="res://Gold.gd" id="3_4enlr"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_yjney")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 2944.0
@@ -30,7 +30,6 @@ offset_right = 348.0
 offset_bottom = 113.0
 theme_override_font_sizes/font_size = 100
 text = "Health:"
-script = ExtResource("2_spcvb")
 
 [node name="Gold" type="Label" parent="."]
 offset_left = 640.0
@@ -39,4 +38,19 @@ offset_right = 891.0
 offset_bottom = 113.0
 theme_override_font_sizes/font_size = 100
 text = "Gold:"
-script = ExtResource("3_4enlr")
+
+[node name="Ennemy" type="Label" parent="."]
+offset_left = 1216.0
+offset_top = -24.0
+offset_right = 1714.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 100
+text = "Ennemies:"
+
+[node name="FPS" type="Label" parent="."]
+offset_left = 2048.0
+offset_top = -24.0
+offset_right = 2546.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 100
+text = "FPS:"

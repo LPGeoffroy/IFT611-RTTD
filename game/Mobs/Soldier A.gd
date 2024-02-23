@@ -18,3 +18,4 @@ func _physics_process(delta):
 func death():
 	print(get_parent().get_progress_ratio())
 	get_parent().get_parent().queue_free()
+	Game.EnnemyCount -= 1
