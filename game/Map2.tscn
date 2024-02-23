@@ -18,6 +18,7 @@ layer_0/tile_data = PackedInt32Array(65537, 65536, 3, 65538, 65536, 3, 131075, 6
 script = ExtResource("3_awt8h")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
+wait_time = 1.2
 autostart = true
 
 [node name="ShortcutPathSpawner" type="Node2D" parent="."]
