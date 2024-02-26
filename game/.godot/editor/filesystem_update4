@@ -1,26 +1,24 @@
-res://main.tscn
-res://Towers/RedBulletTower.gd
-res://Map2.tscn
 res://ui.tscn
-res://kenney_tower-defense-top-down/License.txt
+res://Towers/RedBulletTower.gd
+res://UI.gd
+res://Global/Game.gd
 res://Mobs/Soldier A.tscn
 res://Mobs/Soldier A.gd
-res://Towers/RedBulletTower.tscn
-res://Towers/RedTowerPanel.tscn
-res://Mobs/Stage 1.tscn
-res://MainMenu.tscn
-res://Tiles/tile_map.tscn
-res://Mobs/Stage 2.tscn
-res://PathSpawner.gd
 res://Map1.tscn
-res://Towers/RedTowerPanel.gd
-res://Towers/RedBullet.gd
+res://Map2.tscn
+res://Mobs/Stage 2.tscn
+res://Mobs/Stage 1.tscn
 res://Mobs/Stage 2 Shortcut 1.tscn
-res://Global/Game.gd
-res://Health.gd
-res://Gold.gd
-res://MainPathSpawner.gd
-res://PlayMap2.gd
-res://ShortcutPathSpawnerMap2.gd
-res://MainPathSpawnerMap2.gd
+res://Towers/RedTowerPanel.tscn
+res://Towers/RedBulletTower.tscn
+res://MainMenu.tscn
 res://PathSpawnerMap1.gd
+res://MainPathSpawnerMap2.gd
+res://ShortcutPathSpawnerMap2.gd
+res://Mobs/Stage 1 Shortcut 1.tscn
+res://ShortcutPathSpawnerMap1.gd
+res://Towers/RedBullet.gd
+res://Towers/RedBulletShortcut.tscn
+res://Towers/RedBulletMain.gd
+res://Towers/RedBulletShortcut.gd
+res://Towers/RedBulletMain.tscn

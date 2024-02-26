@@ -39,13 +39,13 @@ offset_bottom = 113.0
 theme_override_font_sizes/font_size = 100
 text = "Gold:"
 
-[node name="Ennemy" type="Label" parent="."]
+[node name="Enemies" type="Label" parent="."]
 offset_left = 1216.0
 offset_top = -24.0
 offset_right = 1714.0
 offset_bottom = 113.0
 theme_override_font_sizes/font_size = 100
-text = "Ennemies:"
+text = "Enemies:"
 
 [node name="FPS" type="Label" parent="."]
 offset_left = 2048.0

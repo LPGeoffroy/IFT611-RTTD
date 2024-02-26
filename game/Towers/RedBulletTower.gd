@@ -1,7 +1,9 @@
 extends StaticBody2D
 
 
-var Bullet = preload("res://Towers/RedBullet.tscn")
+var Bullet = preload("res://Towers/RedBulletMain.tscn")
+var AltBullet = preload("res://Towers/RedBulletShortcut.tscn")
+var WhichBullet = 0
 var bulletDamage = 5
 var pathName
 var currTargets = []
@@ -27,13 +29,17 @@ func _process(_delta):
 	update_powers()
 func Shoot():
 	var tempBullet = Bullet.instantiate()
+	if WhichBullet == 1:
+		tempBullet = AltBullet.instantiate()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage
 	get_node("BulletContainer").add_child(tempBullet)
 	tempBullet.global_position = $Aim.global_position
 		
 func _on_tower_body_entered(body):
+	#Vise l'ennemie "Soldier A" le plus loin dans sa mire de tir, sans regarder le path qu'il prend.
 	if "Soldier A" in body.name:
+		#if "Shortcut 1" in body.get_parent().get_parent().get_parent():
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 
@@ -62,9 +68,12 @@ func _on_input_event(_viewport, event, _shape_idx):
 		var towerPath = get_tree().get_root().get_node(str(Game.CurrentMap) + "/Towers")
 		for i in towerPath.get_child_count():
 			if towerPath.get_child(i).name != self.name:
-				towerPath.get_child(1).get_node("Upgrade/Upgrade").hide()
+				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
+				towerPath.get_child(i).get_node("Targeting/SelectionBox").hide()
 		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
 		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-572,81)
+		get_node("Targeting/SelectionBox").visible = !get_node("Targeting/SelectionBox").visible
+		get_node("Targeting/SelectionBox").global_position = self.position + Vector2(-572,-500)
 
 
 func _on_timer_timeout():
@@ -102,3 +111,10 @@ func _on_range_mouse_entered():
 
 func _on_range_mouse_exited():
 	get_node("Tower/CollisionShape2D").hide()
+
+
+func _on_main_path_pressed():
+	WhichBullet = 0
+
+func _on_shortcut_1_pressed():
+	WhichBullet = 1

@@ -1,14 +1,14 @@
-Label
+Node
 Path2D
 PathFollow2D
+TileMap
+Label
 Timer
 Node2D
-TileMap
 HBoxContainer
 Button
 Panel
 ProgressBar
-Node
 Sprite2D
 FlowContainer
 CanvasLayer
