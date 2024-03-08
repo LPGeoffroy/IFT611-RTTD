@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://b56bpfy2qt5qw"]
+
+[ext_resource type="Script" path="res://PlayMap2.gd" id="1_08lhb"]
+
+[sub_resource type="GDScript" id="GDScript_ifscb"]
+script/source = "extends Button
+
+const MAP_NAME = \"Map1\"
+const MAP_LOCATION = \"res://Map1.tscn\"
+
+func _on_pressed():
+	Game.load_map(MAP_NAME, MAP_LOCATION)
+"
+
+[sub_resource type="GDScript" id="GDScript_ws4pg"]
+script/source = "extends Button
+
+
+func _on_pressed():
+	get_tree().quit()
+"
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 3392.0
+offset_bottom = 1856.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 3392.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 100
+text = "Welcome to the Main Menu!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 192.0
+offset_top = 1024.0
+offset_right = 3392.0
+offset_bottom = 1408.0
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="PlayMap1" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = " Play Map 1 "
+script = SubResource("GDScript_ifscb")
+
+[node name="PlayMap2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = " Play Map 2 "
+script = ExtResource("1_08lhb")
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+script = SubResource("GDScript_ws4pg")
+
+[connection signal="pressed" from="HBoxContainer/PlayMap1" to="HBoxContainer/PlayMap1" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/PlayMap2" to="HBoxContainer/PlayMap2" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_pressed"]

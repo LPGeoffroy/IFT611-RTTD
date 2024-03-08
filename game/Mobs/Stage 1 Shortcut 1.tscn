@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bll8qu0hte8ym"]
+
+[ext_resource type="PackedScene" uid="uid://ce44rumisr87l" path="res://Mobs/Soldier A.tscn" id="1_odc4g"]
+
+[sub_resource type="Curve2D" id="Curve2D_chifx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 192, 992, 0, 0, 0, 0, 2688, 992, 0, 0, 0, 0, 2752, 1280, 0, 0, 0, 0, 2816, 1480, 0, 0, 0, 0, 2880, 1624, 0, 0, 0, 0, 3072, 1744, 0, 0, 0, 0, 3456, 1760, 0, 0, 0, 0, 3584, 1760)
+}
+point_count = 9
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_chifx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(128, 0)
+rotation = 1.50637
+loop = false
+
+[node name="Soldier A" parent="PathFollow2D" instance=ExtResource("1_odc4g")]
+rotation = -1.50637
