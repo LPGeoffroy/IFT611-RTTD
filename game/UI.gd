@@ -7,7 +7,7 @@ func _ready():
 func _process(_delta):
 	$Health.text = "Health: " + str(Game.health)
 	$Gold.text = "Gold: " + str(Game.gold)
-	$Wave.text = "Wave: " + str(Game.waveCount + 1)
+	$Wave.text = "Wave: " + str(Game.waveCount)
 	$Enemies.text = "Enemies: " + str(Game.enemyCount)
 	$FPS.text = "FPS: " + str(Engine.get_frames_per_second())
 

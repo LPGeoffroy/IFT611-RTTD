@@ -1,18 +1,4 @@
 res://Map1.tscn
 res://Towers/RedBulletTower.gd
-res://Map1.gd
-res://Mobs/Stage 1.tscn
 res://Mobs/Soldier A.gd
-res://Global/Game.gd
-res://MainMenu.tscn
-res://Map2.tscn
-res://ShortcutPathSpawnerMap1.gd
-res://MainPathSpawnerMap1.gd
-res://ui.tscn
-res://UI.gd
-res://MainPathSpawnerMap2.gd
-res://ShortcutPathSpawnerMap2.gd
-res://Map2.gd
-res://PlayMap2.gd
-res://Button1.gd
-res://Button2.gd
+res://Map1.gd

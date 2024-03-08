@@ -15,29 +15,39 @@ var mainSpawn : Dictionary
 var shortcutSpawn : Dictionary
 
 # Timers
-var restTimer : Timer = Timer.new()
-var spawnTimer : Timer = Timer.new()
+var restTimer : Timer 
+var spawnTimer : Timer
+var checkGameWonTimer : Timer
 var restTime  : int = 2		# temps entre les waves d'ennemies
 var spawnTime : float = 1		# interal de temps entre les spawn d'ennemies
 
 
 func start_game(node):
-	initialize()
+	initialize_variables()
+	initialize_timers()
 	currentMapNode = node
 	currentMapNode.add_child(restTimer)
-	restTimer.wait_time = restTime
-	restTimer.one_shot = true
-	restTimer.timeout.connect(start_wave)
 	restTimer.start()
 
-func initialize():
+func initialize_variables():
 	gold = 100
 	health = 10
 	enemyCount = 0
 	enemySpawned = 0
 	waveCount = 0
-	restTimer = Timer.new()
+
+func initialize_timers():
 	spawnTimer = Timer.new()
+	spawnTimer.wait_time = spawnTime
+	spawnTimer.timeout.connect(spawn_ennemy)
+	restTimer = Timer.new()
+	restTimer.wait_time = restTime
+	restTimer.one_shot = true
+	restTimer.timeout.connect(start_wave)
+	checkGameWonTimer = Timer.new()
+	checkGameWonTimer.wait_time = 1
+	checkGameWonTimer.timeout.connect(check_game_won)
+
 	
 func load_map(map, mapPath):
 	currentMap = map
@@ -51,22 +61,21 @@ func set_ui(_ui):
 	ui = _ui
 	
 func start_wave():
+	waveCount += 1
 	enemySpawned = 0
 	currentMapNode.add_child(spawnTimer)
-	spawnTimer.wait_time = spawnTime
-	spawnTimer.timeout.connect(spawn_ennemy)
 	spawnTimer.start()
 
 func end_wave():
 	spawnTimer.stop()
-	waveCount += 1
 	if waveCount < currentMapNode.waveCount:
 		restTimer.start()
 	else:
-		pass
+		currentMapNode.add_child(checkGameWonTimer)
+		checkGameWonTimer.start()
 
 func spawn_ennemy():
-	if enemySpawned < currentMapNode.enemyPerWave[waveCount]:
+	if enemySpawned < currentMapNode.enemyPerWave[waveCount-1]:
 		var random_int = randi() % 100
 		if random_int < 70:
 			var tempPath = mainSpawn["path"].instantiate()
@@ -101,14 +110,20 @@ func modify_gold(amount):
 func modify_enemy_count(amount):
 	enemyCount += amount
 
+func check_game_won():
+	if enemyCount == 0:
+		game_won()
+
 func game_won():
 	ui.game_won()
 	restTimer.stop()
 	spawnTimer.stop()
+	checkGameWonTimer.stop()
 	despawn_ennemies()
 	
 func game_lost():
 	ui.game_lost()
 	restTimer.stop()
 	spawnTimer.stop()
+	checkGameWonTimer.stop()
 	despawn_ennemies()
