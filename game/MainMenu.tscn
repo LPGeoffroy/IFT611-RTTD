@@ -5,10 +5,11 @@
 [sub_resource type="GDScript" id="GDScript_ifscb"]
 script/source = "extends Button
 
+const MAP_NAME = \"Map1\"
+const MAP_LOCATION = \"res://Map1.tscn\"
 
 func _on_pressed():
-	Game.CurrentMap = \"Map1\"
-	get_tree().change_scene_to_file(\"res://Map1.tscn\")
+	Game.load_map(MAP_NAME, MAP_LOCATION)
 "
 
 [sub_resource type="GDScript" id="GDScript_ws4pg"]

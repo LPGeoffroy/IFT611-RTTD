@@ -5,7 +5,7 @@ extends Panel
 var currTile
 
 func _on_gui_input(event):
-	if Game.Gold >= 10:
+	if Game.gold >= 10:
 		var tempTower = tower.instantiate()
 		if event is InputEventMouseButton and event.button_mask == 1:
 			#print("Left button down")
@@ -22,7 +22,7 @@ func _on_gui_input(event):
 				
 				get_child(1).global_position = self.get_global_mouse_position() #event.global_position
 			
-				var mapPath = get_tree().get_root().get_node(str(Game.CurrentMap) + "/TileMap")
+				var mapPath = get_tree().get_root().get_node(str(Game.currentMap) + "/TileMap")
 				var tile = mapPath.local_to_map(get_global_mouse_position())
 				currTile = mapPath.get_cell_atlas_coords(0, tile, false)
 				var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
@@ -44,13 +44,13 @@ func _on_gui_input(event):
 				if get_child_count() > 1:	
 					get_child(1).queue_free()
 				if currTile == Vector2i(4,5):
-					var path = get_tree().get_root().get_node(str(Game.CurrentMap) + "/Towers")
+					var path = get_tree().get_root().get_node(str(Game.currentMap) + "/Towers")
 					var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
 					if (targets.size() < 1):
 						path.add_child(tempTower)
 						tempTower.global_position = self.get_global_mouse_position() #event.global_position
 						tempTower.get_node("Area").hide()
-						Game.Gold -= 10
+						Game.gold -= 10
 		else:
 			if get_child_count() > 1:
 				get_child(1).queue_free()

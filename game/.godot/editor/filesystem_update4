@@ -1,24 +1,18 @@
-res://ui.tscn
-res://Towers/RedBulletTower.gd
-res://UI.gd
-res://Global/Game.gd
-res://Mobs/Soldier A.tscn
-res://Mobs/Soldier A.gd
 res://Map1.tscn
-res://Map2.tscn
-res://Mobs/Stage 2.tscn
+res://Towers/RedBulletTower.gd
+res://Map1.gd
 res://Mobs/Stage 1.tscn
-res://Mobs/Stage 2 Shortcut 1.tscn
-res://Towers/RedTowerPanel.tscn
-res://Towers/RedBulletTower.tscn
+res://Mobs/Soldier A.gd
+res://Global/Game.gd
 res://MainMenu.tscn
-res://PathSpawnerMap1.gd
+res://Map2.tscn
+res://ShortcutPathSpawnerMap1.gd
+res://MainPathSpawnerMap1.gd
+res://ui.tscn
+res://UI.gd
 res://MainPathSpawnerMap2.gd
 res://ShortcutPathSpawnerMap2.gd
-res://Mobs/Stage 1 Shortcut 1.tscn
-res://ShortcutPathSpawnerMap1.gd
-res://Towers/RedBullet.gd
-res://Towers/RedBulletShortcut.tscn
-res://Towers/RedBulletMain.gd
-res://Towers/RedBulletShortcut.gd
-res://Towers/RedBulletMain.tscn
+res://Map2.gd
+res://PlayMap2.gd
+res://Button1.gd
+res://Button2.gd
