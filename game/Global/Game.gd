@@ -7,6 +7,7 @@ var health : int
 var enemyCount : int
 var enemySpawned : int
 var waveCount : int
+var nukeCount : int
 
 # Variables de la map
 var currentMap : String
@@ -18,7 +19,7 @@ var shortcutSpawn : Dictionary
 var restTimer : Timer 
 var spawnTimer : Timer
 var checkGameWonTimer : Timer
-var restTime  : int = 2		# temps entre les waves d'ennemies
+var restTime  : int = 1		# temps entre les waves d'ennemies
 var spawnTime : float = 1		# interal de temps entre les spawn d'ennemies
 
 
@@ -35,6 +36,7 @@ func initialize_variables():
 	enemyCount = 0
 	enemySpawned = 0
 	waveCount = 0
+	nukeCount = 10
 
 func initialize_timers():
 	spawnTimer = Timer.new()
@@ -127,3 +129,7 @@ func game_lost():
 	spawnTimer.stop()
 	checkGameWonTimer.stop()
 	despawn_ennemies()
+
+func use_nuke():
+	if nukeCount > 0:
+		nukeCount -= 1
