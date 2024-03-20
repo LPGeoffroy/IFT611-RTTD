@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ei0bxse2yy6k"]
+
+[ext_resource type="Script" path="res://Towers/Nuke/Scripts/NukePanel.gd" id="1_5kjk3"]
+[ext_resource type="Texture2D" uid="uid://b2orfnqjevm26" path="res://Images/Nuke.png" id="2_027bv"]
+
+[node name="NukePanel" type="Panel"]
+offset_right = 81.0
+offset_bottom = 88.0
+script = ExtResource("1_5kjk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+texture = ExtResource("2_027bv")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 41.0
+offset_bottom = 47.0
+text = "1"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
