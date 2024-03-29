@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cu584nws4qg5b"]
 
 [ext_resource type="PackedScene" uid="uid://dadlnip38s7jy" path="res://Tiles/tile_map.tscn" id="1_d1w4h"]
-[ext_resource type="Script" path="res://Map2.gd" id="1_fifwb"]
-[ext_resource type="Script" path="res://MainPathSpawnerMap2.gd" id="3_awt8h"]
-[ext_resource type="PackedScene" uid="uid://cybkisoimdyss" path="res://ui.tscn" id="4_4uvjc"]
-[ext_resource type="Script" path="res://ShortcutPathSpawnerMap2.gd" id="4_egmkg"]
+[ext_resource type="Script" path="res://Maps/Map2.gd" id="1_fifwb"]
+[ext_resource type="Script" path="res://Maps/MainPathSpawnerMap2.gd" id="3_awt8h"]
+[ext_resource type="PackedScene" uid="uid://cybkisoimdyss" path="res://UI/ui.tscn" id="4_4uvjc"]
+[ext_resource type="Script" path="res://Maps/ShortcutPathSpawnerMap2.gd" id="4_egmkg"]
 
 [node name="Map2" type="Node2D"]
 script = ExtResource("1_fifwb")

@@ -1,16 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b56bpfy2qt5qw"]
 
-[ext_resource type="Script" path="res://PlayMap2.gd" id="1_08lhb"]
-
-[sub_resource type="GDScript" id="GDScript_ifscb"]
-script/source = "extends Button
-
-const MAP_NAME = \"Map1\"
-const MAP_LOCATION = \"res://Map1.tscn\"
-
-func _on_pressed():
-	Game.load_map(MAP_NAME, MAP_LOCATION)
-"
+[ext_resource type="Script" path="res://UI/Buttons/PlayMap2.gd" id="1_5ebs7"]
+[ext_resource type="Script" path="res://UI/Buttons/PlayMap1.gd" id="1_dxtjx"]
 
 [sub_resource type="GDScript" id="GDScript_ws4pg"]
 script/source = "extends Button
@@ -51,14 +42,14 @@ custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = " Play Map 1 "
-script = SubResource("GDScript_ifscb")
+script = ExtResource("1_dxtjx")
 
 [node name="PlayMap2" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = " Play Map 2 "
-script = ExtResource("1_08lhb")
+script = ExtResource("1_5ebs7")
 
 [node name="Quit" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
