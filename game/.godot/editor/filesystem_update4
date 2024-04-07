@@ -1,4 +1,11 @@
-res://Map1.tscn
+res://MainMenu.tscn
 res://Towers/RedBulletTower.gd
+res://ui.tscn
+res://Map1.tscn
+res://Map2.tscn
+res://Mobs/Stage 1.tscn
+res://Mobs/Soldier A.tscn
+res://Mobs/Stage 1 Shortcut 1.tscn
 res://Mobs/Soldier A.gd
-res://Map1.gd
+res://UI.gd
+res://Towers/RedBulletMain.gd

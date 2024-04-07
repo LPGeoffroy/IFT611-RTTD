@@ -8,13 +8,13 @@ var bulletDamage = 5
 var pathName
 var currTargets = []
 var curr
-
+#@onready var mainPathSpawnerNode = get_tree().get_root().get_node(str(Game.currentMap) + "/PathSpawner")
+#@onready var shortcutPathSpawnerNode = get_tree().get_root().get_node(str(Game.currentMap) + "/ShortcutPathSpawner")
 var reload = 0
 var range = 400
 
 @onready var timer = get_node("Upgrade/ProgressBar/Timer")
 var startShooting = false
-
 
 func _process(_delta):
 	get_node("Upgrade/ProgressBar").global_position = self.position + Vector2(-64, -48)
@@ -37,16 +37,22 @@ func Shoot():
 	tempBullet.global_position = $Aim.global_position
 		
 func _on_tower_body_entered(body):
-	#Vise l'ennemie "Soldier A" le plus loin dans sa mire de tir, sans regarder le path qu'il prend.
+	#Ne sélectionne comme target que des cibles sur son path
 	if "Soldier A" in body.name:
-		#if "Shortcut 1" in body.get_parent().get_parent().get_parent():
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 
 		for i in currTargets:
-			if "Soldier" in i.name:
-				tempArray.append(i)
-		
+			if WhichBullet == 0:
+				if "Soldier" in i.name:
+					#var iParent = i.Path
+					if not "Shortcut" in i.Path.get_name(2):
+						tempArray.append(i)
+			else:
+				if "Soldier" in i.name:
+					if "Shortcut" in i.Path.get_name(2):
+						tempArray.append(i)
+
 		var currTarget = null
 		
 		for i in tempArray:
@@ -55,9 +61,9 @@ func _on_tower_body_entered(body):
 			else:
 				if i.get_parent().get_progress() > currTarget.get_progress():
 					currTarget = i.get_node("../")
+			curr = currTarget		
+			pathName = currTarget.get_parent().name
 		
-		curr = currTarget		
-		pathName = currTarget.get_parent().name
 		
 func _on_tower_body_exited(_body):
 	currTargets = get_node("Tower").get_overlapping_bodies()

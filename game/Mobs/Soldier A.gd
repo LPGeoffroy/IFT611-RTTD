@@ -3,9 +3,13 @@ extends CharacterBody2D
 
 @export var speed = 200
 var Health = 10
+var Path
 
 func _physics_process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed*delta)
+	var whatIsParent = get_parent().get_path()
+	Path = whatIsParent
+	
 	
 	if get_parent().get_progress_ratio() >= 0.999:
 		Game.modify_health(-1)
