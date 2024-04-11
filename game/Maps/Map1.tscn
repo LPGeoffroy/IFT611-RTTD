@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bee4rxfo608q"]
+[gd_scene load_steps=9 format=3 uid="uid://bee4rxfo608q"]
 
 [ext_resource type="Script" path="res://Maps/Map1.gd" id="1_efkox"]
 [ext_resource type="Texture2D" uid="uid://pawyuplpadm0" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="2_efm8s"]
 [ext_resource type="Script" path="res://Maps/MainPathSpawnerMap1.gd" id="2_jth5b"]
 [ext_resource type="PackedScene" uid="uid://cybkisoimdyss" path="res://UI/ui.tscn" id="4_us83x"]
 [ext_resource type="Script" path="res://Maps/ShortcutPathSpawnerMap1.gd" id="5_fphnx"]
+[ext_resource type="Script" path="res://nextRnd.gd" id="6_hogky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wad4o"]
 texture = ExtResource("2_efm8s")
@@ -4471,3 +4472,18 @@ script = ExtResource("2_jth5b")
 
 [node name="ShortcutPathSpawner" type="Node2D" parent="."]
 script = ExtResource("5_fphnx")
+
+[node name="layoutBtnNextRnd" type="HBoxContainer" parent="."]
+offset_left = 3284.0
+offset_top = 1288.0
+offset_right = 3584.0
+offset_bottom = 1464.0
+
+[node name="nextRnd" type="Button" parent="layoutBtnNextRnd"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Next Round"
+script = ExtResource("6_hogky")
+
+[connection signal="pressed" from="layoutBtnNextRnd/nextRnd" to="layoutBtnNextRnd/nextRnd" method="_on_pressed"]
