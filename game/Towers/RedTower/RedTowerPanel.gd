@@ -1,7 +1,7 @@
 extends Panel
 
 
-@onready var tower = preload("res://Towers/RedBulletTower.tscn")
+@onready var tower = preload("res://Towers/RedTower/RedBulletTower.tscn")
 var currTile
 
 func _on_gui_input(event):

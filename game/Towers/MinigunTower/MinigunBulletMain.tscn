@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfdyv82eo8gjm"]
+
+[ext_resource type="Script" path="res://Towers/MinigunTower/MinigunBulletMain.gd" id="1_53q1r"]
+[ext_resource type="Texture2D" uid="uid://b31ci4mfji4c2" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile272.png" id="2_uidmw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yowdp"]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_quw5s"]
+radius = 14.0
+height = 36.0
+
+[node name="MinigunBullet" type="CharacterBody2D"]
+script = ExtResource("1_53q1r")
+
+[node name="TowerDefenseTile272" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uidmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_yowdp")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_quw5s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
