@@ -16,12 +16,15 @@ var mainSpawn : Dictionary
 var shortcutSpawn : Dictionary
 
 # Timers
+var highResTimer : HighResTimer
 var restTimer : Timer 
 var spawnTimer : Timer
 var checkGameWonTimer : Timer
 var restTime  : int = 1		# temps entre les waves d'ennemies
 var spawnTime : float = 1		# interal de temps entre les spawn d'ennemies
 
+func _ready():
+	print("Game.gd is getting ready")
 
 func start_game(node):
 	initialize_variables()
@@ -39,6 +42,8 @@ func initialize_variables():
 	nukeCount = 1
 
 func initialize_timers():
+	highResTimer = HighResTimer.new()
+	highResTimer.start_timer()
 	spawnTimer = Timer.new()
 	spawnTimer.wait_time = spawnTime
 	spawnTimer.timeout.connect(spawn_ennemy)
@@ -49,8 +54,9 @@ func initialize_timers():
 	checkGameWonTimer = Timer.new()
 	checkGameWonTimer.wait_time = 1
 	checkGameWonTimer.timeout.connect(check_game_won)
+	print("Initiazed timers in ", highResTimer.stop_timer(), " ms")
 
-	
+
 func load_map(map, mapPath):
 	currentMap = map
 	get_tree().change_scene_to_file(mapPath)
@@ -85,7 +91,6 @@ func spawn_ennemy():
 		else:
 			var tempPath = shortcutSpawn["path"].instantiate()
 			shortcutSpawn["node"].add_child(tempPath)
-			shortcutSpawn["node"]
 		enemyCount += 1	
 		enemySpawned += 1
 	else:

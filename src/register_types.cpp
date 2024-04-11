@@ -2,6 +2,7 @@
 
 #include "gdexample.h"
 #include "game_manager.h"
+#include "high_res_timer.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -17,6 +18,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 
 	ClassDB::register_class<GDExample>();
   ClassDB::register_class<GameManager>();
+  ClassDB::register_class<HighResTimer>();
 }
 
 // Décharger le module
