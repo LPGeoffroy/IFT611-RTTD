@@ -31,7 +31,7 @@ func start_game(node):
 	restTimer.start()
 
 func initialize_variables():
-	gold = 100
+	gold = 10000
 	health = 10
 	enemyCount = 0
 	enemySpawned = 0

@@ -1,3 +1,7 @@
+VFlowContainer
+HFlowContainer
+Sprite2D
+StaticBody2D
 Label
 ColorRect
 TextureRect
@@ -8,7 +12,3 @@ Button
 Control
 Node3D
 AcceptDialog
-GameManager
-Timer
-Node
-Path2D
