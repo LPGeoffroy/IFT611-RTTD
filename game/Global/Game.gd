@@ -36,7 +36,7 @@ func initialize_variables():
 	enemyCount = 0
 	enemySpawned = 0
 	waveCount = 0
-	nukeCount = 10
+	nukeCount = 1
 
 func initialize_timers():
 	spawnTimer = Timer.new()
