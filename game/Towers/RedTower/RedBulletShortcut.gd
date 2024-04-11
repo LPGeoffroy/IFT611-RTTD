@@ -4,9 +4,10 @@ var target
 var Speed = 1000
 var pathName = ""
 var bulletDamage
+var timer := Timer.new()
 
 func _physics_process(_delta):
-
+	
 	var pathSpawnerNode = get_tree().get_root().get_node(str(Game.currentMap) + "/ShortcutPathSpawner")
 	for i in pathSpawnerNode.get_child_count():
 		if pathSpawnerNode.get_child(i).name == pathName:
@@ -15,6 +16,15 @@ func _physics_process(_delta):
 			velocity = global_position.direction_to(target) *Speed
 			look_at(target)
 			move_and_slide()
+			# Timer pour que les missiles disparraissent apres x secondes
+			timer.wait_time = 1.5 # 1.5 seconds
+			timer.one_shot = true # don't loop, run once
+			timer.autostart = true # start timer when added to a scene
+			timer.timeout.connect(_on_timer_timeout)
+			add_child(timer)
+
+func _on_timer_timeout() -> void:
+	queue_free()
 
 func _on_area_2d_body_entered(body):
 	if "Soldier" in body.name:

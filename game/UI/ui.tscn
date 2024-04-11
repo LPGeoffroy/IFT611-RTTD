@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cybkisoimdyss"]
+[gd_scene load_steps=9 format=3 uid="uid://cybkisoimdyss"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_yjney"]
 [ext_resource type="PackedScene" uid="uid://lv1vxyokysaq" path="res://Towers/RedTower/RedTowerPanel.tscn" id="1_yuwu3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8o86o2ph2ben" path="res://Towers/MinigunTower/MinigunTowerPanel.tscn" id="4_0dy5y"]
 [ext_resource type="Script" path="res://UI/Buttons/Button2.gd" id="4_47lpp"]
 [ext_resource type="Script" path="res://Towers/MinigunTower/MinigunTowerPanel.gd" id="5_4qbio"]
+[ext_resource type="PackedScene" uid="uid://th5p1j0ytw5m" path="res://Towers/ArtilleryTower/ArtilleryTowerPanel.tscn" id="5_s72fa"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_yjney")
@@ -52,6 +53,9 @@ script = ExtResource("5_4qbio")
 layout_mode = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
+
+[node name="ArtilleryTowerPanel" parent="Panel/VFlowContainer/VFlowContainer2" instance=ExtResource("5_s72fa")]
+layout_mode = 2
 
 [node name="NukePanel" parent="Panel/VFlowContainer/VFlowContainer2" instance=ExtResource("3_ysah3")]
 custom_minimum_size = Vector2(80, 80)
