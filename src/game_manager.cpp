@@ -1,7 +1,6 @@
 #include "game_manager.h"
-#include <godot_cpp/core/class_db.hpp>
-#include <godot_cpp/core/object.hpp>
-#include <godot_cpp/classes/node.hpp>
+// #include <godot_cpp/core/class_db.hpp>
+// #include <godot_cpp/core/object.hpp>
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/classes/scene_tree.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
@@ -42,6 +41,15 @@ void GameManager::_process(double delta) {
     // godot::UtilityFunctions::print("Allo godot");
     // godot::String texte = "Hello World!";
     // godot::UtilityFunctions::print(texte);
+
+    SceneTree *scene_tree = get_tree();
+    StringName node_name;
+
+    Node *current_scene = scene_tree->get_current_scene();
+    for(int i = 0; i < current_scene->get_child_count(); ++i) {
+      node_name = current_scene->get_child(i)->get_name();
+      godot::UtilityFunctions::print(node_name);
+    }
   }
 }
 
