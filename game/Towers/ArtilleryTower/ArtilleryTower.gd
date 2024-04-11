@@ -87,7 +87,7 @@ func _on_timer_timeout():
 
 
 func _on_range_pressed():
-	if range <= 3000:
+	if range <= 2400:
 		if Game.gold >= 10:
 			Game.gold -= 10
 			range += 100
@@ -100,7 +100,7 @@ func _on_attack_speed_pressed():
 	timer.wait_time = 3 - reload
 	
 func _on_power_pressed():
-	if bulletDamage <= 10:
+	if bulletDamage <= 9:
 		if Game.gold >= 10:
 			Game.gold -= 10
 			bulletDamage += 1

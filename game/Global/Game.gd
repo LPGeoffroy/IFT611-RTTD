@@ -20,7 +20,7 @@ var restTimer : Timer
 var spawnTimer : Timer
 var checkGameWonTimer : Timer
 var restTime  : int = 3		# temps entre les waves d'ennemies
-var spawnTime : float = 0.1		# interal de temps entre les spawn d'ennemies
+var spawnTime : float = 0.3		# interal de temps entre les spawn d'ennemies
 
 
 func start_game(node):
@@ -31,7 +31,7 @@ func start_game(node):
 	restTimer.start()
 
 func initialize_variables():
-	gold = 10000
+	gold = 200
 	health = 10
 	enemyCount = 0
 	enemySpawned = 0

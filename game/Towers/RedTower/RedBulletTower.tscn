@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://bhioktw4xks6y"]
 
-[ext_resource type="Script" path="res://Towers/ArtilleryTower/ArtilleryTower.gd" id="1_pxijt"]
-[ext_resource type="Texture2D" uid="uid://dagvgq4ro4c24" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile205.png" id="2_gy43u"]
+[ext_resource type="Script" path="res://Towers/RedTower/RedBulletTower.gd" id="1_ckrrw"]
+[ext_resource type="Texture2D" uid="uid://dprucpwru4i7o" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile250.png" id="2_cm0rf"]
 [ext_resource type="Texture2D" uid="uid://catn4xpafj83h" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile110.png" id="3_5lbml"]
 [ext_resource type="Texture2D" uid="uid://bwpad8ccljjoy" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile297.png" id="4_qwvo3"]
 [ext_resource type="Texture2D" uid="uid://cadxx756wyrdb" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile296.png" id="5_cyk5y"]
@@ -104,9 +104,9 @@ func _process(delta):
 	self.value = get_node(\"Timer\").time_left
 "
 
-[node name="ArtilleryTower" type="StaticBody2D"]
+[node name="RedBulletTower" type="StaticBody2D"]
 input_pickable = true
-script = ExtResource("1_pxijt")
+script = ExtResource("1_ckrrw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_spm0x")
@@ -114,9 +114,9 @@ shape = SubResource("RectangleShape2D_spm0x")
 [node name="Aim" type="Marker2D" parent="."]
 position = Vector2(32, 0)
 
-[node name="TowerDefenseTile205" type="Sprite2D" parent="."]
+[node name="TowerDefenseTile250" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_gy43u")
+texture = ExtResource("2_cm0rf")
 
 [node name="Tower" type="Area2D" parent="."]
 

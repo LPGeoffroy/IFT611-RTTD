@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://sfybj1hdc716"]
+[gd_scene load_steps=7 format=3 uid="uid://sfybj1hdc716"]
 
-[ext_resource type="Script" path="res://Towers/MinigunTower/MinigunBulletMain.gd" id="1_wgbj0"]
+[ext_resource type="Script" path="res://Towers/ArtilleryTower/ArtilleryBulletShortcut.gd" id="1_32cf3"]
+[ext_resource type="Texture2D" uid="uid://ba6qxgbl6l1et" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile133.png" id="2_325b1"]
 [ext_resource type="Texture2D" uid="uid://h73ym1tfuug4" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile252.png" id="2_oy3m7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yowdp"]
@@ -11,10 +12,14 @@ height = 32.0
 radius = 14.0
 height = 36.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6vm2m"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_couuh"]
 
 [node name="ArtilleryBullet" type="CharacterBody2D"]
-script = ExtResource("1_wgbj0")
+script = ExtResource("1_32cf3")
+
+[node name="TowerDefenseTile133" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_325b1")
 
 [node name="TowerDefenseTile252" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -36,7 +41,7 @@ shape = SubResource("CapsuleShape2D_quw5s")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="AoE"]
 rotation = 1.5708
-scale = Vector2(10, 10)
-shape = SubResource("CircleShape2D_6vm2m")
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_couuh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

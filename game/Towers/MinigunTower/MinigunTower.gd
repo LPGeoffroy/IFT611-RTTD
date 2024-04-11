@@ -100,7 +100,7 @@ func _on_attack_speed_pressed():
 	timer.wait_time = 3 - reload
 	
 func _on_power_pressed():
-	if bulletDamage <= 5:
+	if bulletDamage <= 4:
 		if Game.gold >= 10:
 			Game.gold -= 10
 			bulletDamage += 1
