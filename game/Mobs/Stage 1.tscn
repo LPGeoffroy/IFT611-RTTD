@@ -17,3 +17,4 @@ rotation = 1.63371
 loop = false
 
 [node name="Soldier A" parent="PathFollow2D" instance=ExtResource("1_j15e0")]
+rotation = -1.63371

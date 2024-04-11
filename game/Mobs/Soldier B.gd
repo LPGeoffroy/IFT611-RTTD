@@ -5,7 +5,6 @@ extends CharacterBody2D
 var Health = 10
 var Path
 
-
 func init(_speed : int, _health : int, _scale : int):
 	speed = _speed
 	Health = _health
