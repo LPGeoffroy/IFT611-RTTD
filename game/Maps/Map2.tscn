@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu584nws4qg5b"]
+[gd_scene load_steps=7 format=3 uid="uid://cu584nws4qg5b"]
 
 [ext_resource type="PackedScene" uid="uid://dadlnip38s7jy" path="res://Tiles/tile_map.tscn" id="1_d1w4h"]
 [ext_resource type="Script" path="res://Maps/Map2.gd" id="1_fifwb"]
 [ext_resource type="Script" path="res://Maps/MainPathSpawnerMap2.gd" id="3_awt8h"]
 [ext_resource type="PackedScene" uid="uid://cybkisoimdyss" path="res://UI/ui.tscn" id="4_4uvjc"]
 [ext_resource type="Script" path="res://Maps/ShortcutPathSpawnerMap2.gd" id="4_egmkg"]
+[ext_resource type="Script" path="res://Button.gd" id="6_10i0n"]
 
 [node name="Map2" type="Node2D"]
 script = ExtResource("1_fifwb")
@@ -21,3 +22,17 @@ script = ExtResource("3_awt8h")
 
 [node name="ShortcutPathSpawner" type="Node2D" parent="."]
 script = ExtResource("4_egmkg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 3299.0
+offset_top = 1280.0
+offset_right = 3584.0
+offset_bottom = 1456.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Next round"
+script = ExtResource("6_10i0n")
+
+[connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/Button" method="_on_pressed"]
