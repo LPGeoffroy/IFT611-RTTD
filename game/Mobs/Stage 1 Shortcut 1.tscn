@@ -17,3 +17,5 @@ rotation = 1.50637
 loop = false
 
 [node name="Soldier B" parent="PathFollow2D" instance=ExtResource("1_rg88u")]
+rotation = -1.50589
+charRotation = 90

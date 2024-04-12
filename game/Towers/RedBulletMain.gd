@@ -27,6 +27,6 @@ func _on_timer_timeout() -> void:
 	queue_free()
 
 func _on_area_2d_body_entered(body):
-	if "Soldier A" in body.name:
+	if "Soldier" in body.name:
 		body.Health -= bulletDamage
 		queue_free()
