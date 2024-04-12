@@ -28,7 +28,7 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_body_entered(body):
 	var targets = get_node("AoE").get_overlapping_bodies()
 	for target in targets:
-		if "Soldier A" in target.name:
+		if "Soldier" in target.name:
 			target.Health -= bulletDamage
 			queue_free()
 

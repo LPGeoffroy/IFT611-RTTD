@@ -38,7 +38,7 @@ func Shoot():
 		
 func _on_tower_body_entered(body):
 	#Ne sélectionne comme target que des cibles sur son path
-	if "Soldier A" in body.name:
+	if "Soldier" in body.name:
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 
