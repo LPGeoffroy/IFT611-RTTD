@@ -81,9 +81,13 @@ func spawn_ennemy():
 		var random_int = randi() % 100
 		if random_int < 70:
 			var tempPath = mainSpawn["path"].instantiate()
+			if(random_int < 25):
+				tempPath.get_child(0).get_child(0).init(100, 50, 5)
 			mainSpawn["node"].add_child(tempPath)
 		else:
 			var tempPath = shortcutSpawn["path"].instantiate()
+			if(random_int > 90):
+				tempPath.get_child(0).get_child(0).init(100, 50, 5)
 			shortcutSpawn["node"].add_child(tempPath)
 			shortcutSpawn["node"]
 		enemyCount += 1	
