@@ -12,7 +12,7 @@ func _process(_delta):
 	$Wave.text = "Wave: " + str(Game.waveCount)
 	$Enemies.text = "Enemies: " + str(Game.enemyCount)
 	$FPS.text = "FPS: " + str(Engine.get_frames_per_second())
-	$Panel/FlowContainer/NukePanel/Sprite2D/Label.text = "Uses : " + str(Game.nukeCount)
+	$Panel/VFlowContainer/VFlowContainer2/NukePanel/Sprite2D/Label.text = "Uses : " + str(Game.nukeCount)
 
 func game_won():
 	$DialogBoxTitle.text = "You won !"

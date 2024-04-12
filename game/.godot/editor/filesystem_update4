@@ -1,11 +1,23 @@
-res://MainMenu.tscn
-res://Towers/RedBulletTower.gd
-res://ui.tscn
-res://Map1.tscn
-res://Map2.tscn
-res://Mobs/Stage 1.tscn
-res://Mobs/Soldier A.tscn
-res://Mobs/Stage 1 Shortcut 1.tscn
-res://Mobs/Soldier A.gd
-res://UI.gd
-res://Towers/RedBulletMain.gd
+res://Towers/ArtilleryTower/ArtilleryBulletMain.tscn
+res://Towers/MinigunTower/MinigunTower.gd
+res://Towers/RedTower/RedBulletTower.gd
+res://Global/Game.gd
+res://Maps/Map1.gd
+res://Maps/Map2.gd
+res://Towers/MinigunTower/MinigunTower.tscn
+res://Towers/RedTower/RedBulletMain.tscn
+res://Towers/RedTower/RedBulletTower.tscn
+res://UI/MainMenu.tscn
+res://UI/ui.tscn
+res://Towers/MinigunTower/MinigunTowerPanel.tscn
+res://Maps/Map2.tscn
+res://Towers/MinigunTower/MinigunBulletMain.tscn
+res://Towers/MinigunTower/MinigunBulletShortcut.tscn
+res://Towers/RedTower/RedBulletShortcut.tscn
+res://Towers/ArtilleryTower/ArtilleryTowerPanel.tscn
+res://Towers/ArtilleryTower/ArtilleryTower.tscn
+res://Towers/ArtilleryTower/ArtilleryBulletShortcut.tscn
+res://Towers/Nuke/Scenes/Nuke.tscn
+res://Towers/Nuke/Scenes/NukePanel.tscn
+res://Towers/ArtilleryTower/ArtilleryTower.gd
+res://Towers/RedTower/RedTowerPanel.tscn

@@ -1,17 +1,17 @@
 extends StaticBody2D
 
 
-var Bullet = preload("res://Towers/RedBulletMain.tscn")
-var AltBullet = preload("res://Towers/RedBulletShortcut.tscn")
+var Bullet = preload("res://Towers/MinigunTower/MinigunBulletMain.tscn")
+var AltBullet = preload("res://Towers/MinigunTower/MinigunBulletShortcut.tscn")
 var WhichBullet = 0
-var bulletDamage = 5
+var bulletDamage = 1
 var pathName
 var currTargets = []
 var curr
 #@onready var mainPathSpawnerNode = get_tree().get_root().get_node(str(Game.currentMap) + "/PathSpawner")
 #@onready var shortcutPathSpawnerNode = get_tree().get_root().get_node(str(Game.currentMap) + "/ShortcutPathSpawner")
-var reload = 0
-var range = 400
+var reload = 2
+var range = 250
 
 @onready var timer = get_node("Upgrade/ProgressBar/Timer")
 var startShooting = false
@@ -80,28 +80,30 @@ func _on_input_event(_viewport, event, _shape_idx):
 		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-572,81)
 		get_node("Targeting/SelectionBox").visible = !get_node("Targeting/SelectionBox").visible
 		get_node("Targeting/SelectionBox").global_position = self.position + Vector2(-572,-500)
-
-
+		
+		
 func _on_timer_timeout():
 	Shoot()
-	
+
 
 func _on_range_pressed():
-	if Game.gold >= 10:
-		Game.gold -= 10
-		range += 30
+	if range <= 400:
+		if Game.gold >= 10:
+			Game.gold -= 10
+			range += 25
 	
 func _on_attack_speed_pressed():
-	if reload <= 2:
+	if reload <= 2.9:
 		if Game.gold >= 10:
 			Game.gold -= 10
 			reload += 0.1
 	timer.wait_time = 3 - reload
 	
 func _on_power_pressed():
-	if Game.gold >= 10:
-		Game.gold -= 10
-		bulletDamage += 1
+	if bulletDamage <= 4:
+		if Game.gold >= 10:
+			Game.gold -= 10
+			bulletDamage += 1
 
 func update_powers():
 	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)

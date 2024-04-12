@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cybkisoimdyss"]
+[gd_scene load_steps=9 format=3 uid="uid://cybkisoimdyss"]
 
 [ext_resource type="Script" path="res://UI/UI.gd" id="1_yjney"]
-[ext_resource type="PackedScene" uid="uid://lv1vxyokysaq" path="res://Towers/RedTowerPanel.tscn" id="1_yuwu3"]
+[ext_resource type="PackedScene" uid="uid://lv1vxyokysaq" path="res://Towers/RedTower/RedTowerPanel.tscn" id="1_yuwu3"]
 [ext_resource type="Script" path="res://UI/Buttons/Button1.gd" id="3_h63vh"]
 [ext_resource type="PackedScene" uid="uid://ei0bxse2yy6k" path="res://Towers/Nuke/Scenes/NukePanel.tscn" id="3_ysah3"]
+[ext_resource type="PackedScene" uid="uid://8o86o2ph2ben" path="res://Towers/MinigunTower/MinigunTowerPanel.tscn" id="4_0dy5y"]
 [ext_resource type="Script" path="res://UI/Buttons/Button2.gd" id="4_47lpp"]
+[ext_resource type="Script" path="res://Towers/MinigunTower/MinigunTowerPanel.gd" id="5_4qbio"]
+[ext_resource type="PackedScene" uid="uid://th5p1j0ytw5m" path="res://Towers/ArtilleryTower/ArtilleryTowerPanel.tscn" id="5_s72fa"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_yjney")
@@ -24,10 +27,37 @@ scale = Vector2(3, 3)
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="RedTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("1_yuwu3")]
+[node name="VFlowContainer" type="VFlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 235.0
+offset_bottom = 448.0
+scale = Vector2(3, 3)
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="VFlowContainer" type="VFlowContainer" parent="Panel/VFlowContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="RedTowerPanel" parent="Panel/VFlowContainer/VFlowContainer" instance=ExtResource("1_yuwu3")]
 layout_mode = 2
 
-[node name="NukePanel" parent="Panel/FlowContainer" instance=ExtResource("3_ysah3")]
+[node name="MinigunTowerPanel" parent="Panel/VFlowContainer/VFlowContainer" instance=ExtResource("4_0dy5y")]
+layout_mode = 2
+script = ExtResource("5_4qbio")
+
+[node name="VFlowContainer2" type="VFlowContainer" parent="Panel/VFlowContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="ArtilleryTowerPanel" parent="Panel/VFlowContainer/VFlowContainer2" instance=ExtResource("5_s72fa")]
+layout_mode = 2
+
+[node name="NukePanel" parent="Panel/VFlowContainer/VFlowContainer2" instance=ExtResource("3_ysah3")]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 

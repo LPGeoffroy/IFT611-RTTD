@@ -1,7 +1,7 @@
 extends Node2D
 
-const waveCount : int = 4
-const enemyPerWave : Array[int] = [5, 7, 9, 11]
+const waveCount : int = 10
+const enemyPerWave : Array[int] = [5, 7, 9, 11, 16, 25, 34, 43, 52, 61]
 
 
 func _ready():
