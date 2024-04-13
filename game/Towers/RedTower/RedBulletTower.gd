@@ -11,6 +11,7 @@ var curr				# Le target courant
 var reload = 0
 var range = 400
 
+
 func _ready():
 	pass
 
@@ -30,11 +31,12 @@ func _process(_delta):
 
 func Shoot():
 	var tempBullet = Bullet.instantiate()
-	tempBullet.pathName = pathName
-	tempBullet.bulletDamage = bulletDamage
 	get_node("BulletContainer").add_child(tempBullet)
 	tempBullet.global_position = $Aim.global_position
+	tempBullet.pathName = pathName
+	tempBullet.bulletDamage = bulletDamage
 	tempBullet.target = curr
+	tempBullet.parent = self
 
 
 func _on_tower_body_entered(body):
@@ -72,6 +74,16 @@ func find_target():
 	if tmpTarget != null:
 		curr = tmpTarget
 		pathName = curr.get_node("../").get_parent().name
+
+func find_new_target(bullet) -> bool:
+	if curr == null:
+		find_target()
+	if is_instance_valid(curr):
+		bullet.target = curr
+		bullet.pathName = pathName
+		bullet.bulletDamage = bulletDamage
+		return true
+	return false
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_mask == 1:

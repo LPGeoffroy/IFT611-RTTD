@@ -8,6 +8,7 @@ var pathName = ""
 var bulletDamage
 var timer := Timer.new()
 var timerWaitTime : int = 1.5
+var parent
 
 func _ready():
 	pass
@@ -20,7 +21,9 @@ func _physics_process(_delta):
 		pathSpawnerNode = get_tree().get_root().get_node(str(Game.currentMap) + "/ShortcutPathSpawner")
 		
 	if not is_instance_valid(target):	# TODO : Trouver un autre target au lieu de détruire le missile
-		print("Target dead")
+		parent.find_new_target(self)
+	if not is_instance_valid(target):
+		print("Not target for missile")
 		queue_free()
 		return
 	targetPosition = target.global_position
