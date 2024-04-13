@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+
 @onready var timer = get_node("Upgrade/ProgressBar/Timer")
 var Bullet = preload("res://Towers/RedTower/RedBulletMain.tscn")
 var WhichBullet = 0
@@ -10,6 +11,8 @@ var curr				# Le target courant
 var reload = 0
 var range = 400
 
+func _ready():
+	pass
 
 func _process(_delta):
 	get_node("Upgrade/ProgressBar").global_position = self.position + Vector2(-64, -48)
@@ -70,7 +73,6 @@ func find_target():
 		curr = tmpTarget
 		pathName = curr.get_node("../").get_parent().name
 
-
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_mask == 1:
 		var towerPath = get_tree().get_root().get_node(str(Game.currentMap) + "/Towers")
@@ -83,20 +85,17 @@ func _on_input_event(_viewport, event, _shape_idx):
 		get_node("Targeting/SelectionBox").visible = !get_node("Targeting/SelectionBox").visible
 		get_node("Targeting/SelectionBox").global_position = self.position + Vector2(-572,-500)
 
-
 func _on_timer_timeout():
 	if is_instance_valid(curr):
 		Shoot()
 	else:
 		timer.set_paused(true)
 
-
 func _on_range_pressed():
 	if range <= 750:
 		if Game.gold >= 10:
 			Game.gold -= 10
 			range += 50
-
 
 func _on_attack_speed_pressed():
 	if reload <= 2:
@@ -105,28 +104,22 @@ func _on_attack_speed_pressed():
 			reload += 0.1
 	timer.wait_time = 3 - reload
 
-
 func _on_power_pressed():
 	if Game.gold >= 10:
 		Game.gold -= 10
 		bulletDamage += 1
 
-
 func update_powers():
 	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)
 	get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text = str(3 - reload)
 	get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text = str(bulletDamage)
-	
 	get_node("Tower/CollisionShape2D").shape.radius = range
-
 
 func _on_range_mouse_entered():
 	get_node("Tower/CollisionShape2D").show()
 
-
 func _on_range_mouse_exited():
 	get_node("Tower/CollisionShape2D").hide()
-
 
 func _on_main_path_pressed():
 	WhichBullet = 0
