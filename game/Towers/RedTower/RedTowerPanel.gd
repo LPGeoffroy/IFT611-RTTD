@@ -55,6 +55,9 @@ func _on_gui_input(event):
 						tempTower.global_position = self.get_global_mouse_position() #event.global_position
 						tempTower.get_node("Area").hide()
 						Game.gold -= towerCost
+						Game.player.spentGold += towerCost
+						Game.player.currentTowers += 1
+						Game.evaluate_player_power()
 		else:
 			if get_child_count() > 1:
 				get_child(1).queue_free()

@@ -23,6 +23,14 @@ var checkGameWonTimer : Timer
 var restTime  : int = 1		# temps entre les waves d'ennemies
 var spawnTime : float = 1		# interal de temps entre les spawn d'ennemies
 
+# Player
+class Player:
+	var spentGold : int = 0
+	var currentTowers : int = 0
+	var upgrades : int = 0
+	var power : float = 0
+var player : Player
+
 func _ready():
 	print("Game.gd is getting ready")
 
@@ -40,6 +48,7 @@ func initialize_variables():
 	enemySpawned = 0
 	waveCount = 0
 	nukeCount = 1
+	player = Player.new()
 
 func initialize_timers():
 	highResTimer = HighResTimer.new()
@@ -84,22 +93,28 @@ func end_wave():
 
 func spawn_ennemy():
 	if enemySpawned < currentMapNode.enemyPerWave[waveCount-1]:
-		var random_int = randi() % 100
-		if random_int < 70:
-			var tempPath = mainSpawn["path"].instantiate()
-			if(random_int < 25):
-				tempPath.get_child(0).get_child(0).init(100, 50, 5)
-			mainSpawn["node"].add_child(tempPath)
-		else:
-			var tempPath = shortcutSpawn["path"].instantiate()
-			if(random_int > 90):
-				tempPath.get_child(0).get_child(0).init(100, 50, 5)
-			shortcutSpawn["node"].add_child(tempPath)
-		enemyCount += 1	
-		enemySpawned += 1
+		if(player.currentTowers > 0):
+			var random_int = randi() % 100
+			if random_int < 70:
+				var tempPath = mainSpawn["path"].instantiate()
+				if(random_int < 25 && player.power > 100):
+					tempPath.get_child(0).get_child(0).init(100, 50, 5)
+				mainSpawn["node"].add_child(tempPath)
+			else:
+				var tempPath = shortcutSpawn["path"].instantiate()
+				if(random_int > 90 && player.power > 100):
+					tempPath.get_child(0).get_child(0).init(100, 50, 5)
+				shortcutSpawn["node"].add_child(tempPath)
+			enemyCount += 1	
+			enemySpawned += 1
 	else:
-		end_wave()
+		if(enemyCount < 2):
+			end_wave()
 
+func evaluate_player_power():
+	player.power = player.spentGold + (player.currentTowers * 2) + (player.upgrades * 2)
+	print(player.power)
+	
 func despawn_ennemies():
 	var main_path = mainSpawn["node"]
 	var shortcut_path = shortcutSpawn["node"]
