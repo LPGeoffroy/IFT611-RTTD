@@ -79,11 +79,8 @@ func _on_input_event(_viewport, event, _shape_idx):
 		for i in towerPath.get_child_count():
 			if towerPath.get_child(i).name != self.name:
 				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
-				towerPath.get_child(i).get_node("Targeting/SelectionBox").hide()
 		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
 		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-572,81)
-		get_node("Targeting/SelectionBox").visible = !get_node("Targeting/SelectionBox").visible
-		get_node("Targeting/SelectionBox").global_position = self.position + Vector2(-572,-500)
 
 func _on_timer_timeout():
 	if is_instance_valid(curr):
