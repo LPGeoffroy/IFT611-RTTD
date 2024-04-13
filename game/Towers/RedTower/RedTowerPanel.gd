@@ -3,9 +3,13 @@ extends Panel
 
 @onready var tower = preload("res://Towers/RedTower/RedBulletTower.tscn")
 var currTile
+var towerCost : int = 10
+
+func _ready():
+	pass
 
 func _on_gui_input(event):
-	if Game.gold >= 10:
+	if Game.gold >= towerCost:
 		var tempTower = tower.instantiate()
 		if event is InputEventMouseButton and event.button_mask == 1:
 			#print("Left button down")
@@ -50,7 +54,7 @@ func _on_gui_input(event):
 						path.add_child(tempTower)
 						tempTower.global_position = self.get_global_mouse_position() #event.global_position
 						tempTower.get_node("Area").hide()
-						Game.gold -= 10
+						Game.gold -= towerCost
 		else:
 			if get_child_count() > 1:
 				get_child(1).queue_free()

@@ -20,8 +20,8 @@ var highResTimer : HighResTimer
 var restTimer : Timer 
 var spawnTimer : Timer
 var checkGameWonTimer : Timer
-var restTime  : int = 3		# temps entre les waves d'ennemies
-var spawnTime : float = 0.3		# interal de temps entre les spawn d'ennemies
+var restTime  : int = 1		# temps entre les waves d'ennemies
+var spawnTime : float = 1		# interal de temps entre les spawn d'ennemies
 
 func _ready():
 	print("Game.gd is getting ready")
