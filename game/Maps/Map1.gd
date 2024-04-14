@@ -2,6 +2,8 @@ extends Node2D
 
 const waveCount : int = 10
 const enemyPerWave : Array[int] = [5, 7, 9, 11, 16, 25, 34, 43, 52, 61]
+const startingGold : int = 100
+const spawnTime : float = 0.5
 
 
 func _ready():
