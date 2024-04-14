@@ -21,7 +21,7 @@ var restTimer : Timer
 var spawnTimer : Timer
 var checkGameWonTimer : Timer
 var restTime  : int = 1		# temps entre les waves d'ennemies
-var spawnTime : float = 1		# interal de temps entre les spawn d'ennemies
+var spawnTime : float		# interal de temps entre les spawn d'ennemies
 
 # Player
 class Player:
@@ -35,14 +35,15 @@ func _ready():
 	print("Game.gd is getting ready")
 
 func start_game(node):
+	gold = node.startingGold
+	currentMapNode = node
+	spawnTime = node.spawnTime
 	initialize_variables()
 	initialize_timers()
-	currentMapNode = node
 	currentMapNode.add_child(restTimer)
 	restTimer.start()
 
 func initialize_variables():
-	gold = 200
 	health = 10
 	enemyCount = 0
 	enemySpawned = 0
@@ -112,7 +113,7 @@ func spawn_ennemy():
 		print("Decision made in: ", timer.stop_timer())
 	else:
 		if(enemyCount < 2):
-			end_wave()
+			spawnTimer.stop()
 
 
 func spawn_enemy_main(speed, health, size):

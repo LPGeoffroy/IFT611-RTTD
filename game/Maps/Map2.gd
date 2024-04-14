@@ -1,8 +1,9 @@
 extends Node2D
 
 const waveCount : int = 10
-const enemyPerWave : Array[int] = [5, 7, 9, 11, 16, 25, 34, 43, 52, 61]
-
+const enemyPerWave : Array[int] = [500, 700, 900, 1100, 1600, 2500, 3400, 4300, 5200, 6100]
+const startingGold : int = 1000
+const spawnTime : float = 0.05
 
 func _ready():
 	var main_spawn = {"node": $PathSpawner, "path": $PathSpawner.path}
