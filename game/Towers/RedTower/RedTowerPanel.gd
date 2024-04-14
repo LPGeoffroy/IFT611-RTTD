@@ -57,7 +57,6 @@ func _on_gui_input(event):
 						Game.gold -= towerCost
 						Game.player.spentGold += towerCost
 						Game.player.currentTowers += 1
-						Game.evaluate_player_power()
 		else:
 			if get_child_count() > 1:
 				get_child(1).queue_free()

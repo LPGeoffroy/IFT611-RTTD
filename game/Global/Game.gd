@@ -92,7 +92,10 @@ func end_wave():
 		checkGameWonTimer.start()
 
 func spawn_ennemy():
+	var timer = HighResTimer.new()
 	if enemySpawned < currentMapNode.enemyPerWave[waveCount-1]:
+		timer.start_timer()
+		evaluate_player_power()
 		if(player.currentTowers > 0):
 			var random_int = randi() % 100
 			if random_int < 65:
@@ -106,9 +109,11 @@ func spawn_ennemy():
 					spawn_enemy_short(100, 25, 5)
 				else:
 					spawn_enemy_short(200, 10, 2)
+		print("Decision made in: ", timer.stop_timer())
 	else:
 		if(enemyCount < 2):
 			end_wave()
+
 
 func spawn_enemy_main(speed, health, size):
 	var tempPath = mainSpawn["path"].instantiate()
@@ -126,7 +131,6 @@ func spawn_enemy_short(speed, health, size):
 
 func evaluate_player_power():
 	player.power = player.spentGold + (player.currentTowers * 2) + (player.upgrades * 2)
-	print(player.power)
 	
 func despawn_ennemies():
 	var main_path = mainSpawn["node"]
