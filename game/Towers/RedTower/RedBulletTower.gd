@@ -111,12 +111,14 @@ func _on_attack_speed_pressed():
 		if Game.gold >= 10:
 			Game.gold -= 10
 			reload += 0.1
+			Game.player.upgrades += 1
 	timer.wait_time = 3 - reload
 
 func _on_power_pressed():
 	if Game.gold >= 10:
 		Game.gold -= 10
 		bulletDamage += 1
+		Game.player.upgrades += 1
 
 func update_powers():
 	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)
